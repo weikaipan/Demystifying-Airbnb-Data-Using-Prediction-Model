@@ -1,3 +1,10 @@
+"""
+Credits:
+    https://spark.apache.org/docs/2.2.0/ml-guide.html
+    https://stackoverflow.com/questions/35804755/apply-onehotencoder-for-several-categorical-columns-in-sparkmlib
+"""
+
+
 from pyspark import SparkConf
 from pyspark.sql import SparkSession, DataFrameWriter, DataFrame
 from pyspark.sql.types import *

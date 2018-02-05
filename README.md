@@ -9,7 +9,7 @@ discover which areas is recommended for long-term rental or short-term rental.
 ## Authors
 
 * **Yi-Hsuan Fu**
-* **Chun Hao Yang**
+* **Chun-Hao Yang**
 * **Wei-Kai Pan**
 
 

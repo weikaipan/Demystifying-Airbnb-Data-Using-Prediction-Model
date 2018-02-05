@@ -70,14 +70,16 @@ Spark ML
 * [Apache SparkSQL](https://spark.apache.org/sql/)
 * [GEOJSON](http://geojson.org/)
 
-## Result
-
-
 ## Future Work
 
-## License
+Base on our model, we conclude that short-term rental is a better option for most properties. For a property owner and potential investor, our results indicated that properties located in less central neighborhoods like Flatbush and Washington heights with 3-4 bedrooms would maximize their margins through short-term rental on Airbnb. On average, the number of days to break-even is 16 when considering both short and long-term options. Therefore, unless Airbnb is more strictly regulated in New York, such setup might affect housing supply for local residents as owners are incentivized towards short-term renting.
+With a 0.57 R2 value and a 0.34 mean absolute error, however, we conclude with caution and modest confidence. In the near future, we will try different ways to improve our model.
+(Paragraph Credit to Yi-Hsuan Fu)
 
-This project is licensed under the NYU License - see the [LICENSE.md](LICENSE.md) file for details
+## Result
+In the future, we would like to tune our model further to achieve a higher R2 value. This can improve our analytic and price prediction so we can achieve more accurate results. We would like to investigate and compare our results with other regression models such as adaboost regression as well.
+Also, we hope to extend our analysis further by factoring in the buying cost of properties so we can compare which property type and neighborhood will generate the highest return on investment. Since our current analysis only compares long-term and short-term rental options, we can’t conclude how much profit remains after mortgage and other costs.
+(Paragraph Credit to Yi-Hsuan Fu)
 
 ## Acknowledgments
 

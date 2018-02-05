@@ -6,7 +6,11 @@ coming markets where the margins are high, as well as a comparison between long-
 regulations on Airbnb rentals in each city will also be taken into consideration. The project will use Hadoop and Pig to calculate aggregate statistics and 
 discover which areas is recommended for long-term rental or short-term rental.
 
-## Getting Started
+## Authors
+
+* **Yi-Hsuan Fu**
+* **Chun Hao Yang**
+* **Wei-Kai Pan**
 
 
 ### Prerequisites
@@ -17,7 +21,7 @@ Java 1.8.0_72
 Spark 2.2.0
 ```
 
-### Running on Dumbo
+### Running on [Dumbo](https://wikis.nyu.edu/display/NYUHPC/Clusters+-+Dumbo)
 
 ```
 module load java/1.8.0_72
@@ -29,7 +33,7 @@ PYTHONSTARTUP=analysis.py pyspark
 ## Data Source 
 * [Inside Airbnb](http://insideairbnb.com/get-the-data.html), Listings of NYC, range from Jan. 2017 to Oct. 2017
 * [NYPD Crime Statistics](http://www1.nyc.gov/site/nypd/stats/crime-statistics/crime-statistics-landing.page)
-* [Zillow]
+* [Zillow](https://www.zillow.com/home-values/)
 
 ## Analytic Process 
 
@@ -52,9 +56,11 @@ Spark MLlib - OneHotEncoder
 ```
 Spark-ML-Statistics - Chi-Square Test
 ```
-### Linear Regression
+### Random Forest Regression and Gradient Boosted Regressor
 
-### Cross-Validation
+```
+Spark ML
+```
 
 
 ## Built With
@@ -68,11 +74,6 @@ Spark-ML-Statistics - Chi-Square Test
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Authors
-
-* **Yi-Hsuan Fu**
-* **Chun Hao Yang**
-* **Wei-Kai Pan**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 

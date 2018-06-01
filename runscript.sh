@@ -1,3 +1,3 @@
 # spark-submit src/dataprepare.py
-cd ./src/
+cd ./spark/
 PYTHONSTARTUP=./task.py pyspark

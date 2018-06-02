@@ -29,8 +29,8 @@ def analysis(predictions):
     """."""
     # predictions.select(raw_features + [label, '[prediction']]).write.csv('../../data/airbnb_predictions_csv', header=True)
     # predictions.select(raw_features + [label, 'prediction']).write.json('../../data/airbnb_predictions_json')
-    byneighbors = predictions.groupby('neighbourhood').agg(f.collect_list('prediction'),
-                                                           f.collect_list('last_scraped'))
+    byneighbors = predictions.groupby('neighbourhood').agg(f.mean('prediction'),
+                                                           f.mean('price'))
     byneighbors.show()
     byneighbors.write.json('../data/airbnb_predictions_by_neighborhood_avg_json')
     return

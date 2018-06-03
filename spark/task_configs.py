@@ -2,8 +2,7 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 
-schema = StructType([StructField("price", FloatType(), True),
-                     StructField("accommodates", StringType(), True),
+schema = StructType([StructField("accommodates", StringType(), True),
                      StructField("neighbourhood", StringType(), True),
                      StructField("bedrooms", StringType(), True),
                      StructField("beds", StringType(), True),
@@ -11,7 +10,8 @@ schema = StructType([StructField("price", FloatType(), True),
                      StructField("review_scores_rating", FloatType(), True),
                      StructField("property_type", StringType(), True),
                      StructField("room_type", StringType(), True),
-                     StructField("last_scraped", DateType(), True)
+                     StructField("last_scraped", DateType(), True),
+                     StructField("price", FloatType(), True)
                      ])
 spark = SparkSession.builder.master("local").appName("Airbnb").getOrCreate()
 

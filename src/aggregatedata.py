@@ -2,7 +2,7 @@
 import pandas as pd
 import glob
 
-from config import features, path, raw_path
+from .config import features, path, raw_path
 
 
 def select_merge():

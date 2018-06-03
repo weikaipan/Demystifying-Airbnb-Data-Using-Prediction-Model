@@ -7,12 +7,12 @@ from config import features, path, raw_path
 
 def select_merge():
     """Select feature we need, and merge."""
-    data_zip = glob.glob(raw_path + '*.csv.gz')
+    data_zip = glob.glob(raw_path + '*.csv')
     print(data_zip)
     result = pd.DataFrame()
     for data in data_zip:
         print("Working on ", data)
-        df = pd.read_csv(data, compression='gzip')
+        df = pd.read_csv(data)
         df = df[features]
         result.append(df)
     result.to_csv(path + 'cleanedlistings.csv')

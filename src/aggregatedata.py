@@ -15,6 +15,7 @@ def select_merge():
         df = pd.read_csv(data)
         df = df[features]
         result.append(df)
+        print(result.shape)
     result.to_csv(path + 'cleanedlistings.csv')
 
 

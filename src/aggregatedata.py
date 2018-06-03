@@ -16,7 +16,7 @@ def select_merge():
         df = pd.read_csv(data)
         df = df[features + label]
         print("DataFrame: ", df.columns.values)
-        df[['price']] = df[['price']].apply(lambda x: x.replace('$', '')).apply(lambda x: x.replace(',', '')).astype(np.float64)
+        df['price'] = df['price'].apply(lambda x: x.replace('$', '')).apply(lambda x: x.replace(',', '')).astype(np.float64)
         print(df['price'])
 
         result = result.append(df)

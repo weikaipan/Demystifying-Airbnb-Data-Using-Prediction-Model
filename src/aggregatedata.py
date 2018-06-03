@@ -21,7 +21,7 @@ def select_merge():
 
         result = result.append(df)
         print(result.shape)
-    result.to_csv(path + 'cleanedlistings.csv')
+    result.to_csv(path + 'cleanedlistings.csv', index=False)
 
 
 def main():

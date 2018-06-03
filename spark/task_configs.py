@@ -26,3 +26,10 @@ features = ["accommodates", "neighbourhood",
             "property_type", "room_type"]
 
 label = "price"
+
+# Local Path
+local_file = '../data/cleanedlistings.csv'
+
+# Cluster Path
+hadoop_root = '/user/wkp219/project/'
+hadoop_file = '/user/wkp219/project/cleanedlistings.csv'

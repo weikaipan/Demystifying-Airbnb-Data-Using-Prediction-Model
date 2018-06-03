@@ -5,6 +5,7 @@ import argparse
 
 from model import model
 from task_configs import raw_features, features, label, spark
+from task_configs import hadoop_file, hadoop_root
 from pyspark.sql import functions as f
 
 
@@ -27,12 +28,11 @@ def run_task(data):
 
 def analysis(predictions):
     """."""
-    # predictions.select(raw_features + [label, '[prediction']]).write.csv('../../data/airbnb_predictions_csv', header=True)
-    # predictions.select(raw_features + [label, 'prediction']).write.json('../../data/airbnb_predictions_json')
+    predictions.select(raw_features + [label, 'prediction']).write.json(hadoop_root + 'airbnb_predictions_json')
     byneighbors = predictions.groupby('neighbourhood').agg(f.mean('prediction'),
                                                            f.mean('price'))
     byneighbors.show()
-    byneighbors.write.json('../data/airbnb_predictions_by_neighborhood_avg_json')
+    byneighbors.write.json(hadoop_root + 'airbnb_predictions_by_neighborhood_avg_json')
     return
 
 
@@ -40,19 +40,13 @@ def parse_argument():
     """Hyperparmeter tuning."""
     ap = argparse.ArgumentParser()
     ap.add_argument("-airbnb", "--airbnb_path",
-                    default='../data/cleanairbnb.csv')
+                    default=hadoop_file)
 
     return vars(ap.parse_args())
 
 
 def main(args):
     """."""
-    # aggregate_data('./', csv_cols=["price", "accommodates",
-    #                                "bedrooms", "beds",
-    #                                "bathrooms", "review_scores_rating",
-    #                                "property_type", "room_type"],
-    #                destnation=args['airbnb_path'])
-
     airbnb = read_data(args['airbnb_path'], spark)
     airbnb = clean_data(airbnb)
     predictions = run_task(airbnb)

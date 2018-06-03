@@ -1,8 +1,9 @@
 """."""
 import pandas as pd
+import numpy as np
 import glob
 
-from config import features, path, raw_path
+from config import features, path, raw_path, label
 
 
 def select_merge():
@@ -13,10 +14,12 @@ def select_merge():
     for data in data_zip:
         print("Working on ", data)
         df = pd.read_csv(data)
-        df = df[features]
+        df = df[features + label]
         print("DataFrame: ", df.columns.values)
+        df[['price']] = df[['price']].apply(lambda x: x.replace('$', '')).apply(lambda x: x.replace(',', '')).astype(np.float64)
+        print(df['price'])
 
-        result.append(df)
+        result = result.append(df)
         print(result.shape)
     result.to_csv(path + 'cleanedlistings.csv')
 

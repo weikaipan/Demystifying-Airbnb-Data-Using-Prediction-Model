@@ -12,8 +12,12 @@ discover which areas is recommended for long-term rental or short-term rental.
 * **Chun-Hao Yang**
 * **Wei-Kai Pan**
 
+### Deployment
 
-### Prerequisites
+The data visualization could be found on this website:
+* [Let's predict Airbnb](https://airbnbvisual.herokuapp.com/)
+
+### Requirements
 
 ```
 Python 3.6.0
